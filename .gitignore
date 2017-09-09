@@ -1,5 +1,8 @@
 .DS_Store
 .svn/*
+*.sdf
+*.ipch
+*x64
 UnityProject/Library/*
 UnityProject/obj/*
 UnityProject/Temp/*
