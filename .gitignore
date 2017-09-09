@@ -1,0 +1,9 @@
+.DS_Store
+.svn/*
+UnityProject/Library/*
+UnityProject/obj/*
+UnityProject/Temp/*
+UnityProject/UnityProject.sln
+UnityProject/UnityProject.userprefs
+UnityProject/Assembly-CSharp-Editor.csproj
+

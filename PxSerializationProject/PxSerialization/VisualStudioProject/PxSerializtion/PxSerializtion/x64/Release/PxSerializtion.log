@@ -1,0 +1,15 @@
+﻿生成启动时间为 2017/1/13 11:44:31。
+     1>项目“F:\UnityPhysXExport_proj\trunk\PxSerializationProject\PxSerialization\VisualStudioProject\PxSerializtion\PxSerializtion\PxSerializtion.vcxproj”在节点 2 上(Build 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(381,5): warning MSB8028: The intermediate directory (x64\Release\) contains files shared from another project (PxSerializtion.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"F:\UnityPhysXExport_proj\trunk\PxSerializationProject\PxSerialization\VisualStudioProject\PxSerializtion\x64\Release\PxSerialization.dll" /INCREMENTAL:NO /NOLOGO PhysX3_x64.lib PhysX3Common_x64.lib PhysX3Cooking_x64.lib PhysX3Extensions.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\UnityPhysXExport_proj\trunk\PxSerializationProject\PxSerialization\VisualStudioProject\PxSerializtion\x64\Release\PxSerialization.pdb" /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X64 /DLL x64\Release\PxSerialization.obj
+         x64\Release\AssemblyInfo.obj
+         x64\Release\Stdafx.obj
+            正在创建库 F:\UnityPhysXExport_proj\trunk\PxSerializationProject\PxSerialization\VisualStudioProject\PxSerializtion\x64\Release\PxSerialization.lib 和对象 F:\UnityPhysXExport_proj\trunk\PxSerializationProject\PxSerialization\VisualStudioProject\PxSerializtion\x64\Release\PxSerialization.exp
+     1>LINK : warning LNK4098: 默认库“LIBCMT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
+         PxSerializtion.vcxproj -> F:\UnityPhysXExport_proj\trunk\PxSerializationProject\PxSerialization\VisualStudioProject\PxSerializtion\x64\Release\PxSerialization.dll
+     1>已完成生成项目“F:\UnityPhysXExport_proj\trunk\PxSerializationProject\PxSerialization\VisualStudioProject\PxSerializtion\PxSerializtion\PxSerializtion.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.27

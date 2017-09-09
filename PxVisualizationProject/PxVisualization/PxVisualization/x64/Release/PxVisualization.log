@@ -1,0 +1,23 @@
+﻿生成启动时间为 2017/1/15 17:27:12。
+     1>项目“F:\UnityPhysXExport_proj\trunk\PxVisualizationProject\PxVisualization\PxVisualization\PxVisualization.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D _SCL_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_WARNINGS /D NDEBUG /D _MBCS /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt ..\main.cpp ..\physics_scene_camera.cpp ..\physics_scene_manager.cpp ..\physics_scene_render.cpp ..\server_cooperation_render.cpp
+         main.cpp
+         physics_scene_camera.cpp
+         physics_scene_manager.cpp
+         physics_scene_render.cpp
+         server_cooperation_render.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"F:\UnityPhysXExport_proj\trunk\PxVisualizationProject\PxVisualization\x64\Release\PxVisualization.exe" /NOLOGO PhysX3_x64.lib PhysX3Common_x64.lib PhysX3Cooking_x64.lib PhysXProfileSDK.lib PhysX3Extensions.lib PhysXVisualDebuggerSDK.lib PhysX3CharacterKinematic_x64.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\UnityPhysXExport_proj\trunk\PxVisualizationProject\PxVisualization\x64\Release\PxVisualization.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\UnityPhysXExport_proj\trunk\PxVisualizationProject\PxVisualization\x64\Release\PxVisualization.lib" /MACHINE:X64 x64\Release\main.obj
+         x64\Release\physics_scene_camera.obj
+         x64\Release\physics_scene_manager.obj
+         x64\Release\physics_scene_render.obj
+         x64\Release\server_cooperation_render.obj
+         正在生成代码
+         已完成代码的生成
+         PxVisualization.vcxproj -> F:\UnityPhysXExport_proj\trunk\PxVisualizationProject\PxVisualization\x64\Release\PxVisualization.exe
+     1>已完成生成项目“F:\UnityPhysXExport_proj\trunk\PxVisualizationProject\PxVisualization\PxVisualization\PxVisualization.vcxproj”(Rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:03.36

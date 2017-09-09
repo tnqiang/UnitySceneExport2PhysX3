@@ -1,0 +1,13 @@
+﻿生成启动时间为 2017/1/3 13:27:17。
+     1>项目“F:\UnityPhysXExport_proj\trunk\PxSerializtionProject\PxSerialization\VisualStudioProject\PxSerializtion\PxSerializtion\PxSerializtion.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /AIC:\Windows\Microsoft.NET\Framework\v2.0.50727\ /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /Zi /clr /nologo /W3 /WX- /Od /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D PXSERIALIZATION_EXPORTS /D _DEBUG /D _WINDLL /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"x64\Debug\PxSerializtion.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /TP /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\mscorlib.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Data.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Xml.dll /errorReport:prompt /d1clr:nostdlib PxSerializtion.cpp
+         PxSerializtion.cpp
+     1>PxSerializtion.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>f:\unityphysxexport_proj\trunk\pxserializtionproject\pxserialization\visualstudioproject\pxserializtion\pxserializtion\PxSerializtion.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>f:\unityphysxexport_proj\trunk\pxserializtionproject\pxserialization\include\foundation/PxPreprocessor.h(328): fatal error C1189: #error :  Exactly one of NDEBUG and _DEBUG needs to be defined by preprocessor
+     1>已完成生成项目“F:\UnityPhysXExport_proj\trunk\PxSerializtionProject\PxSerialization\VisualStudioProject\PxSerializtion\PxSerializtion\PxSerializtion.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.11

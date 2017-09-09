@@ -1,0 +1,30 @@
+﻿生成启动时间为 2017/1/15 16:26:08。
+     1>项目“F:\UnityPhysXExport_proj\trunk\PxVisualizationProject\PxVisualization\PxVisualization\PxVisualization.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D _MBCS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\main.cpp ..\physics_scene_camera.cpp ..\physics_scene_manager.cpp ..\physics_scene_render.cpp ..\server_cooperation_render.cpp
+         server_cooperation_render.cpp
+     1>f:\unityphysxexport_proj\trunk\physxinclude\foundation\pxpreprocessor.h(326): warning C4005: “NDEBUG”: 宏重定义
+                 命令行参数: 参见前面的“NDEBUG”定义
+     1>f:\unityphysxexport_proj\trunk\physxinclude\foundation\pxpreprocessor.h(330): fatal error C1189: #error :  Exactly one of NDEBUG and _DEBUG needs to be defined by preprocessor
+         physics_scene_render.cpp
+     1>f:\unityphysxexport_proj\trunk\physxinclude\foundation\pxpreprocessor.h(326): warning C4005: “NDEBUG”: 宏重定义
+                 命令行参数: 参见前面的“NDEBUG”定义
+     1>f:\unityphysxexport_proj\trunk\physxinclude\foundation\pxpreprocessor.h(330): fatal error C1189: #error :  Exactly one of NDEBUG and _DEBUG needs to be defined by preprocessor
+         physics_scene_manager.cpp
+     1>f:\unityphysxexport_proj\trunk\physxinclude\foundation\pxpreprocessor.h(326): warning C4005: “NDEBUG”: 宏重定义
+                 命令行参数: 参见前面的“NDEBUG”定义
+     1>f:\unityphysxexport_proj\trunk\physxinclude\foundation\pxpreprocessor.h(330): fatal error C1189: #error :  Exactly one of NDEBUG and _DEBUG needs to be defined by preprocessor
+         physics_scene_camera.cpp
+     1>f:\unityphysxexport_proj\trunk\physxinclude\foundation\pxpreprocessor.h(326): warning C4005: “NDEBUG”: 宏重定义
+                 命令行参数: 参见前面的“NDEBUG”定义
+     1>f:\unityphysxexport_proj\trunk\physxinclude\foundation\pxpreprocessor.h(330): fatal error C1189: #error :  Exactly one of NDEBUG and _DEBUG needs to be defined by preprocessor
+         main.cpp
+     1>f:\unityphysxexport_proj\trunk\physxinclude\foundation\pxpreprocessor.h(326): warning C4005: “NDEBUG”: 宏重定义
+                 命令行参数: 参见前面的“NDEBUG”定义
+     1>f:\unityphysxexport_proj\trunk\physxinclude\foundation\pxpreprocessor.h(330): fatal error C1189: #error :  Exactly one of NDEBUG and _DEBUG needs to be defined by preprocessor
+         正在生成代码...
+     1>已完成生成项目“F:\UnityPhysXExport_proj\trunk\PxVisualizationProject\PxVisualization\PxVisualization\PxVisualization.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.85
