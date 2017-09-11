@@ -83,7 +83,7 @@ bool PhysicsSceneManager::ParseFromCollectionFile()
 {
 	PxCollection* shared = NULL;
 	PxCollection* collection = NULL;
-	char *filename = "your scene file path";
+	char *filename = "/Users/renshengqiang/Documents/Temp/7.xml";
 
 	PxDefaultFileInputData inputStream(filename);
 

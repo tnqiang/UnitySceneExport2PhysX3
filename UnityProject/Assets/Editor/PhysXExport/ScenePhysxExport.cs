@@ -8,7 +8,8 @@ using UnityEditor.SceneManagement;
 
 namespace UnityPhysXExport
 {
-    public static class ExportScene  {
+    public static class ExportScene
+    {
 
 
         [StructLayout(LayoutKind.Sequential)]
@@ -28,68 +29,68 @@ namespace UnityPhysXExport
             eTRIANGLEMESH,
             eHEIGHTFIELD,
 
-            eGEOMETRY_COUNT,	//!< internal use only!
-            eINVALID = -1,	//!< internal use only!
+            eGEOMETRY_COUNT,    //!< internal use only!
+            eINVALID = -1,  //!< internal use only!
         };
 
         enum PxShapeFlag
-    	{
-    		/**
-    		\brief The shape will partake in collision in the physical simulation.
+        {
+            /**
+            \brief The shape will partake in collision in the physical simulation.
 
-    		\note It is illegal to raise the eSIMULATION_SHAPE and eTRIGGER_SHAPE flags.
-    		In the event that one of these flags is already raised the sdk will reject any 
-    		attempt to raise the other.  To raise the eSIMULATION_SHAPE first ensure that 
-    		eTRIGGER_SHAPE is already lowered.
+            \note It is illegal to raise the eSIMULATION_SHAPE and eTRIGGER_SHAPE flags.
+            In the event that one of these flags is already raised the sdk will reject any 
+            attempt to raise the other.  To raise the eSIMULATION_SHAPE first ensure that 
+            eTRIGGER_SHAPE is already lowered.
 
-    		\note This flag has no effect if simulation is disabled for the corresponding actor (see #PxActorFlag::eDISABLE_SIMULATION).
+            \note This flag has no effect if simulation is disabled for the corresponding actor (see #PxActorFlag::eDISABLE_SIMULATION).
 
-    		@see PxSimulationEventCallback.onContact() PxScene.setSimulationEventCallback() PxShape.setFlag(), PxShape.setFlags()
-    		*/
-    		eSIMULATION_SHAPE				= (1<<0),
+            @see PxSimulationEventCallback.onContact() PxScene.setSimulationEventCallback() PxShape.setFlag(), PxShape.setFlags()
+            */
+            eSIMULATION_SHAPE = (1 << 0),
 
-    		/**
-    		\brief The shape will partake in scene queries (ray casts, overlap tests, sweeps, ...).
-    		*/
-    		eSCENE_QUERY_SHAPE				= (1<<1),
+            /**
+            \brief The shape will partake in scene queries (ray casts, overlap tests, sweeps, ...).
+            */
+            eSCENE_QUERY_SHAPE = (1 << 1),
 
-    		/**
-    		\brief The shape is a trigger which can send reports whenever other shapes enter/leave its volume.
+            /**
+            \brief The shape is a trigger which can send reports whenever other shapes enter/leave its volume.
 
-    		\note Triangle meshes and heightfields can not be triggers. Shape creation will fail in these cases.
+            \note Triangle meshes and heightfields can not be triggers. Shape creation will fail in these cases.
 
-    		\note Shapes marked as triggers do not collide with other objects. If an object should act both
-    		as a trigger shape and a collision shape then create a rigid body with two shapes, one being a 
-    		trigger shape and the other a collision shape. 	It is illegal to raise the eTRIGGER_SHAPE and 
-    		eSIMULATION_SHAPE flags on a single PxShape instance.  In the event that one of these flags is already 
-    		raised the sdk will reject any attempt to raise the other.  To raise the eTRIGGER_SHAPE flag first 
-    		ensure that eSIMULATION_SHAPE flag is already lowered.
+            \note Shapes marked as triggers do not collide with other objects. If an object should act both
+            as a trigger shape and a collision shape then create a rigid body with two shapes, one being a 
+            trigger shape and the other a collision shape. 	It is illegal to raise the eTRIGGER_SHAPE and 
+            eSIMULATION_SHAPE flags on a single PxShape instance.  In the event that one of these flags is already 
+            raised the sdk will reject any attempt to raise the other.  To raise the eTRIGGER_SHAPE flag first 
+            ensure that eSIMULATION_SHAPE flag is already lowered.
 
-    		\note Shapes marked as triggers are allowed to participate in scene queries, provided the eSCENE_QUERY_SHAPE flag is set. 
+            \note Shapes marked as triggers are allowed to participate in scene queries, provided the eSCENE_QUERY_SHAPE flag is set. 
 
-    		\note This flag has no effect if simulation is disabled for the corresponding actor (see #PxActorFlag::eDISABLE_SIMULATION).
+            \note This flag has no effect if simulation is disabled for the corresponding actor (see #PxActorFlag::eDISABLE_SIMULATION).
 
-    		@see PxSimulationEventCallback.onTrigger() PxScene.setSimulationEventCallback() PxShape.setFlag(), PxShape.setFlags()
-    		*/
-    		eTRIGGER_SHAPE					= (1<<2),
+            @see PxSimulationEventCallback.onTrigger() PxScene.setSimulationEventCallback() PxShape.setFlag(), PxShape.setFlags()
+            */
+            eTRIGGER_SHAPE = (1 << 2),
 
-    		/**
-    		\brief Enable debug renderer for this shape
+            /**
+            \brief Enable debug renderer for this shape
 
-    		@see PxScene.getRenderBuffer() PxRenderBuffer PxVisualizationParameter
-    		*/
-    		eVISUALIZATION					= (1<<3),
+            @see PxScene.getRenderBuffer() PxRenderBuffer PxVisualizationParameter
+            */
+            eVISUALIZATION = (1 << 3),
 
-    		/**
-    		\brief Sets the shape to be a particle drain.
-    		*/
-    		ePARTICLE_DRAIN					= (1<<4)
-    	};
+            /**
+            \brief Sets the shape to be a particle drain.
+            */
+            ePARTICLE_DRAIN = (1 << 4)
+        };
 
         [StructLayout(LayoutKind.Sequential)]
-        struct PxBoxGeometry 
+        struct PxBoxGeometry
         {
-            public PxGeometryType mType; 
+            public PxGeometryType mType;
             public Vector3 halfExtents;
         }
 
@@ -111,7 +112,7 @@ namespace UnityPhysXExport
         [StructLayout(LayoutKind.Sequential)]
         struct PxFilterData
         {
-    	    public Int32 word0;
+            public Int32 word0;
             public Int32 word1;
             public Int32 word2;
             public Int32 word3;
@@ -133,7 +134,7 @@ namespace UnityPhysXExport
         static extern IntPtr createMaterial(float staticFriction, float dynamicFriction, float restitution);
 
         [DllImport("PxSerialization")]
-        static extern IntPtr createShape(IntPtr  geometry, IntPtr material);
+        static extern IntPtr createShape(IntPtr geometry, IntPtr material);
 
         [DllImport("PxSerialization")]
         static extern void setOwnerClient(IntPtr actor, int inClient);
@@ -143,6 +144,9 @@ namespace UnityPhysXExport
 
         [DllImport("PxSerialization")]
         static extern IntPtr createMeshShape(IntPtr points, int point_count, IntPtr triangles, int triangle_count, bool convex, IntPtr material);
+
+        [DllImport("PxSerialization")]
+        static extern IntPtr CreateHeightField(IntPtr heights, int width, int height, float thickness, float scaleX, float scaleY, float scaleZ, IntPtr material);
 
         [DllImport("PxSerialization")]
         static extern void attachShape(IntPtr actor, IntPtr shape);
@@ -207,19 +211,9 @@ namespace UnityPhysXExport
             SetShapeQueryFilterData(shape, data);
         }
 
-        static private Dictionary<Vector3, IntPtr> m_materialCache = new Dictionary<Vector3, IntPtr>();
         static IntPtr CreateMaterial(PhysicMaterial material)
         {
-            Vector3 key = new Vector3(material.staticFriction, material.dynamicFriction, material.bounciness);
-            IntPtr ptr;
-            if (m_materialCache.TryGetValue(key, out ptr))
-            {
-                Debug.Log("CreateMaterial got cached material");
-                return ptr;
-            }
-            ptr = createMaterial(material.staticFriction, material.dynamicFriction, material.bounciness);
-            m_materialCache.Add(key, ptr);
-            return ptr;
+            return createMaterial(material.staticFriction, material.dynamicFriction, material.bounciness);
         }
 
         static IntPtr CreateRigidDynamic(Rigidbody rigidBody)
@@ -261,7 +255,7 @@ namespace UnityPhysXExport
             Marshal.FreeHGlobal(transformPtr);
         }
 
-        
+
         static void SetShapeName(Collider collider, IntPtr shape)
         {
             String name = collider.name;
@@ -297,7 +291,7 @@ namespace UnityPhysXExport
             geo.halfExtents.x = boxCollider.size.x * Mathf.Abs(boxCollider.transform.lossyScale.x) / 2.0f;
             geo.halfExtents.y = boxCollider.size.y * Mathf.Abs(boxCollider.transform.lossyScale.y) / 2.0f;
             geo.halfExtents.z = boxCollider.size.z * Mathf.Abs(boxCollider.transform.lossyScale.z) / 2.0f;
-            if(boxCollider.size .x < 0 || boxCollider.size.y < 0 || boxCollider.size.z < 0)
+            if (boxCollider.size.x < 0 || boxCollider.size.y < 0 || boxCollider.size.z < 0)
             {
                 Debug.LogError(string.Format("BoxCollider {0} 的大小为负数, GameObject Name: {1}，请检查", boxCollider.name, GetGameObjectNameInHierarchy(boxCollider.transform)));
             }
@@ -391,7 +385,7 @@ namespace UnityPhysXExport
             }
             Vector3 scale = meshCollider.transform.lossyScale;
             Vector3[] meshVertices = new Vector3[mesh.vertices.Length];
-            for(int i=0; i<mesh.vertices.Length; ++i)
+            for (int i = 0; i < mesh.vertices.Length; ++i)
             {
                 Vector3 vertice = mesh.vertices[i];
                 vertice.x *= scale.x;
@@ -405,14 +399,10 @@ namespace UnityPhysXExport
             {
                 fixed (int* triangles = mesh.triangles)
                 {
-                    shape = createMeshShape((IntPtr)vertices, mesh.vertexCount, (IntPtr)triangles, mesh.triangles.Length/3, meshCollider.convex, CreateMaterial(meshCollider.material));
+                    //Debug.Log("triangle count: " + mesh.triangles.Length);
+                    //Debug.Log("material: " + meshCollider.material);
+                    shape = createMeshShape((IntPtr)vertices, mesh.vertexCount, (IntPtr)triangles, mesh.triangles.Length / 3, meshCollider.convex, CreateMaterial(meshCollider.material));
                 }
-            }
-
-            if (shape == IntPtr.Zero)
-            {
-                Debug.LogError(string.Format("Export {0} Error", GetGameObjectNameInHierarchy(meshCollider.gameObject.transform)));
-                return IntPtr.Zero;
             }
 
             if (meshCollider.isTrigger)
@@ -423,6 +413,39 @@ namespace UnityPhysXExport
             SetShapeName(meshCollider, shape);
             setShapeContactOffset(shape, meshCollider.contactOffset);
             SetShapeQueryFilterData(shape, meshCollider);
+            return shape;
+        }
+
+        static IntPtr CreateHeightField(TerrainCollider terrainCollider)
+        {
+            int width = terrainCollider.terrainData.heightmapWidth;
+            int height = terrainCollider.terrainData.heightmapHeight;
+            float[,] rawHeights = terrainCollider.terrainData.GetHeights(0, 0, width, height);
+            Int16[] heights = new Int16[width * height];
+            for (int x = 0; x < width; ++x)
+            {
+                for (int y = 0; y < height; ++y)
+                {
+                    heights[y + x * height] = (Int16)rawHeights[x, y];
+                }
+            }
+
+            Debug.LogFormat("width: {0} height: {1} length: {2}", width, height, heights.Length);
+
+            IntPtr shape = IntPtr.Zero;
+
+            GCHandle heightsHandler = GCHandle.Alloc(heights, GCHandleType.Pinned);
+            IntPtr heightsPtr = Marshal.UnsafeAddrOfPinnedArrayElement(heights, 0);
+            shape = CreateHeightField(heightsPtr, width, height, terrainCollider.terrainData.thickness,
+                               terrainCollider.terrainData.heightmapScale.x, terrainCollider.terrainData.heightmapScale.y, terrainCollider.terrainData.heightmapScale.z,
+                                CreateMaterial(terrainCollider.material));
+
+            heightsHandler.Free();
+            if (shape == IntPtr.Zero)
+            {
+                Debug.Log("Create shape error");
+            }
+
             return shape;
         }
 
@@ -476,7 +499,21 @@ namespace UnityPhysXExport
             foreach (MeshCollider meshCollider in meshColliders)
             {
                 IntPtr shape = CreateMeshCollider(meshCollider);
-                if(shape != IntPtr.Zero)
+                if (shape != IntPtr.Zero)
+                {
+                    PxTransform transform;
+                    transform.p = rootTransform.InverseTransformPoint(goTransform.position);
+                    transform.q = Quaternion.Inverse(rootTransform.rotation) * goTransform.rotation;
+                    SetLocalPose(shape, transform);
+                    shapes.Add(shape);
+                }
+            }
+
+            TerrainCollider[] terrainColliders = go.GetComponents<TerrainCollider>();
+            foreach (TerrainCollider terrainCollider in terrainColliders)
+            {
+                IntPtr shape = CreateHeightField(terrainCollider);
+                if (shape != IntPtr.Zero)
                 {
                     PxTransform transform;
                     transform.p = rootTransform.InverseTransformPoint(goTransform.position);
@@ -510,7 +547,7 @@ namespace UnityPhysXExport
             if (rigidBody != null)
             {
                 pxRigidBody = CreateRigidDynamic(rigidBody);
-             
+
             }
             else
             {
@@ -543,7 +580,8 @@ namespace UnityPhysXExport
 
         public static bool ExportCurrentScene(string outputPath)
         {
-            try{
+            try
+            {
                 initPhysics();
                 IntPtr collection = createCollection();
                 if (collection == IntPtr.Zero)
@@ -564,11 +602,11 @@ namespace UnityPhysXExport
 
                 complete(collection, IntPtr.Zero, false);
 
-                    string filename = outputPath + "/" + scene.name + ".xml";
+                string filename = outputPath + "/" + scene.name + ".xml";
                 serializeCollection(collection, IntPtr.Zero, Marshal.StringToHGlobalAnsi(filename), false);
                 return true;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Debug.LogError(string.Format("Export Scene: {0} error, error msg: {1}", EditorSceneManager.GetActiveScene().path, e.ToString()));
                 return false;

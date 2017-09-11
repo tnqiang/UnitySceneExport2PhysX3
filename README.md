@@ -32,7 +32,7 @@ bool PhysicsSceneManager::ParseFromCollectionFile()
 - Box ![](./Image/support.png)
 - Convex Mesh ![](./Image/support.png)
 - Triangle Mesh ![](./Image/support.png)
-- Height Field(testing)
+- Height Field(./Image/support.png)
 
 ## How to use
 

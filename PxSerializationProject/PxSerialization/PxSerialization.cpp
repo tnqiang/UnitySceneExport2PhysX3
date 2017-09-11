@@ -226,11 +226,18 @@ PXSERIALIZATION_API PxShape* CreateHeightField(const PxI16* heights, PxI32 width
 	}
 	desc.samples.data = pxSample;
 
-	PxHeightField* hf = gPhysics->createHeightField(desc);
+	PxDefaultMemoryOutputStream writeBuffer;
+	if (!gCooking->cookHeightField(desc, writeBuffer))
+	{
+		return NULL;
+	}
+
+	PxDefaultMemoryInputData readBuffer(writeBuffer.getData(), writeBuffer.getSize());
+	PxHeightField* hf = gPhysics->createHeightField(readBuffer);
 	if (hf == NULL) return NULL;
 	PxMeshGeometryFlags flags;
 
-	return gPhysics->createShape(PxHeightFieldGeometry(hf, flags, scaleY, scaleX, scaleZ), *material); // TODO: kmaxheight
+	return gPhysics->createShape(PxHeightFieldGeometry(hf, flags, scaleY, scaleX, scaleZ), *material);
 }
 
     PXSERIALIZATION_API void setShapeName(PxShape* shapePtr, const char *shapeName)

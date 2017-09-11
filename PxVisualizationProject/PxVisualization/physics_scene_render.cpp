@@ -198,10 +198,13 @@ void RenderGeometry(const PxGeometryHolder &h)
 				glPopMatrix();
 			}
 			break;
-//        case PxGeometryType::eHEIGHTFIELD:
-//            const PxHeightFieldGeometry& hfGeo = h.heightField();
-//            printf("Height Field\n");
-//            break;
+        case PxGeometryType::eHEIGHTFIELD:
+            {
+                const PxHeightFieldGeometry& hfGeo = h.heightField();
+                
+                printf("Height Field width: %d height: %d\n", hfGeo.heightField->getNbRows(), hfGeo.heightField->getNbColumns());
+            }
+            break;
 		default:
 			break;
 		}
