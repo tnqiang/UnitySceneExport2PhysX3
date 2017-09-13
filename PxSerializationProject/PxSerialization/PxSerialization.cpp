@@ -9,10 +9,13 @@ static PxDefaultErrorCallback*	    gErrorCallback = NULL;
 static PxFoundation*			    gFoundation = NULL;
 static PxPhysics*				    gPhysics	= NULL;
 static PxCooking*				    gCooking	= NULL;
-static PxSerializationRegistry*     gSerializationRegistry = NULL;
+static PxSerializationRegistry*    gSerializationRegistry = NULL;
 
 static PxDefaultCpuDispatcher*	    gDispatcher = NULL;
-static PxScene*                     gScene		= NULL;
+static PxScene*				    gScene		= NULL;
+
+
+//static PxU32                       gNbMemBlocks = 0;
 
 extern "C" {
 
@@ -210,6 +213,7 @@ PXSERIALIZATION_API PxShape* CreateHeightField(const PxI16* heights, PxI32 width
 	desc.nbColumns = height;
 	desc.samples.stride = 4;
 	desc.thickness = thickness;
+    desc.convexEdgeThreshold = 4;
 
 	PxHeightFieldSample* pxSample = new PxHeightFieldSample[width * height];
 	if (pxSample == NULL) return NULL;

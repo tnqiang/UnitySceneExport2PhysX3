@@ -426,25 +426,36 @@ namespace UnityPhysXExport
             {
                 for (int y = 0; y < height; ++y)
                 {
-                    heights[y + x * height] = (Int16)rawHeights[x, y];
+                    heights[y * width + x] = (Int16)(rawHeights[x, y]*32767);
                 }
             }
 
-            Debug.LogFormat("width: {0} height: {1} length: {2}", width, height, heights.Length);
+            //Debug.LogFormat("width: {0} height: {1} length: {2}", width, height, heights.Length);
 
             IntPtr shape = IntPtr.Zero;
 
             GCHandle heightsHandler = GCHandle.Alloc(heights, GCHandleType.Pinned);
             IntPtr heightsPtr = Marshal.UnsafeAddrOfPinnedArrayElement(heights, 0);
-            shape = CreateHeightField(heightsPtr, width, height, terrainCollider.terrainData.thickness,
-                               terrainCollider.terrainData.heightmapScale.x, terrainCollider.terrainData.heightmapScale.y, terrainCollider.terrainData.heightmapScale.z,
-                                CreateMaterial(terrainCollider.material));
+            shape = CreateHeightField(heightsPtr, width, height, -1*terrainCollider.terrainData.thickness,
+                terrainCollider.terrainData.heightmapScale.x,
+                terrainCollider.terrainData.heightmapScale.y / 32767,
+                terrainCollider.terrainData.heightmapScale.z,
+                CreateMaterial(terrainCollider.material));
 
             heightsHandler.Free();
             if (shape == IntPtr.Zero)
             {
                 Debug.Log("Create shape error");
             }
+
+            if (terrainCollider.isTrigger)
+            {
+                setShapeFlag(shape, PxShapeFlag.eSIMULATION_SHAPE, false);
+            }
+            setShapeFlag(shape, PxShapeFlag.eTRIGGER_SHAPE, terrainCollider.isTrigger);
+            SetShapeName(terrainCollider, shape);
+            setShapeContactOffset(shape, terrainCollider.contactOffset);
+            SetShapeQueryFilterData(shape, terrainCollider);
 
             return shape;
         }
